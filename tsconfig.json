@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "dist",
+    "allowJs": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "module": "esnext", //commonjs
+    "target": "es5",
+    "jsx": "react",
+    "strictNullChecks": false,
+    "declaration": false,
+    "strict": true,
+    "allowSyntheticDefaultImports":true,
+    "lib": [
+      "es2019",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
