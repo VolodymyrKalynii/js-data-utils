@@ -1,12 +1,12 @@
 {
   "name": "js-data-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Utils for working with js data",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
