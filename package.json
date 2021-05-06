@@ -2,9 +2,11 @@
   "name": "js-data-utils",
   "version": "1.0.3",
   "description": "Utils for working with js data",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "tsc"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "tsconfig": "^7.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
   }
 }
