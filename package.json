@@ -1,0 +1,23 @@
+{
+  "name": "js-data-utils",
+  "version": "1.0.3",
+  "description": "Utils for working with js data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VolodymyrKalynii/js-data-utils.git"
+  },
+  "author": "Volodymyr Kalynii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VolodymyrKalynii/js-data-utils/issues"
+  },
+  "homepage": "https://github.com/VolodymyrKalynii/js-data-utils#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "tsconfig": "^7.0.0"
+  }
+}
