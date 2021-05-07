@@ -9,3 +9,4 @@ export * from './string-utils';
 export * from './time-function-tester';
 export * from './time-utils';
 export * from './words-end-generator';
+export * from './url-params-getter';
