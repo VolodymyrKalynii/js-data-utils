@@ -135,8 +135,8 @@ export const getOrderArrForMapping = (n):Array<number> => {
     return arr;
 };
 
-// Возвращает рандомный элемент всего массива, кроме переданных индексов
-export const getUniqueRndIndex = (arrayOfElements:Array<any>, unwantedKeys:Array<number>):number => {
+// Returns a random element of the entire array, except for the passed indices
+export const getUniqueRndElem = (arrayOfElements:Array<any>, unwantedKeys:Array<number>):number => {
     const keysToPass = [];
 
     for (let i = 0; i < arrayOfElements.length; i++) {
@@ -146,13 +146,13 @@ export const getUniqueRndIndex = (arrayOfElements:Array<any>, unwantedKeys:Array
     return getRandElem(keysToPass);
 };
 
-// Возвращает N рандомных элементов всего массива, кроме переданных индексов
-export const getNUniqueRndIndexes = (n:number, arrayOfElements:Array<any>, unwantedKeys:Array<number> = []):Array<number> => {
+// Returns N random elements of the entire array, except for the passed indices
+export const getNUniqueRndElems = (n:number, arrayOfElements:Array<any>, unwantedKeys:Array<number> = []):Array<number> => {
     const newUnwantedKeys = [...unwantedKeys];
     const resultArr = [];
 
     for (let i = 0; i < n; i++) {
-        const newUniqueElement = getUniqueRndIndex(arrayOfElements, newUnwantedKeys);
+        const newUniqueElement = getUniqueRndElem(arrayOfElements, newUnwantedKeys);
         
         resultArr.push(newUniqueElement);
 
@@ -162,7 +162,7 @@ export const getNUniqueRndIndexes = (n:number, arrayOfElements:Array<any>, unwan
     return resultArr;
 };
 
-// Возвращает индексы переданных элементов в переданном массиве
+// Returns the indices of the passed elements in the passed array
 export const indexesOfItems = (items:Array<number>, cardsArray:Array<any>):Array<number> => 
     items.map(item => cardsArray.indexOf(item));
 
