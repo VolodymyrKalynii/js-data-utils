@@ -1,6 +1,6 @@
 {
   "name": "js-data-utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Utils for working with js data",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
