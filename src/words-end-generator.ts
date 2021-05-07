@@ -1,3 +1,15 @@
+/**
+ * Returns n-th arr elem, which depend from number
+ *
+ * @example
+ *  titles = ["минута", "минуты", "минут"]
+ *  when n = 1 returns first elem
+ *  when n = 2,3,4 returns second elem
+ *  when n = 5,6,7 returns third elem
+ *  etc...
+ * @param n
+ * @param titles
+ */
 export const getWordEndFromNumber = (n:number, titles) =>
     titles[(n % 10 === 1 && n % 100 !== 11)
         ? 0

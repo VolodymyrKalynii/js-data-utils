@@ -16,7 +16,12 @@ const colors = [
     '#009900'
 ];
 
-export const generateColors = (colorsQty, inputColors:Array<string> = colors):Array<string> => {
+/**
+ *
+ * @param colorsQty - Array<colorStr>. colorStr = hex|rgb|rgba|string
+ * @param inputColors
+ */
+export const generateColors = (colorsQty:number, inputColors:Array<string> = colors):Array<string> => {
     const resultColors = [];
     let prevColor = null;
     

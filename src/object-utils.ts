@@ -11,19 +11,7 @@ export const freezeDeep = <T>(obj:T):T => {
     return Object.freeze(obj);
 };
 
-export const mergeObjects = (obj1, obj2) => {
-    const objects = [obj1, obj2];
-
-    return objects.reduce(function(r, o) {
-        Object.keys(o).forEach(function(k) {
-            r[k] = o[k];
-        });
-
-        return r;
-    }, {});
-};
-
-export const getRndPop = (obj) => {
+export const getRndPop = <T>(obj:{[key:string]:T}):T => {
     const rndPropNumber = Math.floor( Math.random() * (Object.keys(obj).length));
     const res = Object.keys(obj);
 

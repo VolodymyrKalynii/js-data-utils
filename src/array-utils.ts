@@ -1,29 +1,19 @@
 import {cloneDeep} from 'lodash/cloneDeep'
 import {getRandInteger} from './math-utils';
 
-export const getUniqueElements = (arr:Array<any>) => {
-    const obj = {};
+export const getUniqueElements = <T>(arr:Array<T>):Array<T> => Array.from(new Set(arr));
 
-    for (let i = 0; i < arr.length; i++) {
-        const str = arr[i];
-
-        obj[str] = true;
-    }
-
-    return Object.keys(obj);
-};
-
-export const findUniqueElements = (arr:Array<any>, arr1:Array<any>) =>
+export const findUniqueElements = <T>(arr:Array<T>, arr1:Array<T>):Array<T> =>
     arr.filter((obj) =>
         arr1.indexOf(obj) < 0
     );
 
-export const findSimilarElements = (arr:Array<any>, arr1:Array<any>):Array<any> =>
+export const findSimilarElements = <T>(arr:Array<T>, arr1:Array<T>):Array<T> =>
     arr.filter((obj) =>
         arr1.indexOf(obj) >= 0
     );
 
-export const compareArrays = ( array1:Array<any>, array2:Array<any>):boolean => (
+export const compareArrays = (array1:Array<any>, array2:Array<any>):boolean => (
     array1.length === array2.length && array1.sort().every((value, index) => value === array2.sort()[index])
 );
 
@@ -34,15 +24,16 @@ export const getRandIndex = (data:Array<any>):number => {
 };
 
 /**
- *
+ * Returns an array clone.
+ * If any of the elements of the array has a complex type - automatically does deep cloning.
  * @param arr
- * @param deep - якщо зразу
+ * @param deep - set true if deep cloning is required immediately
  */
-export const getClone = <T>(arr:Array<T>, deep = false):Array<T> => {
+export const getArrClone = <T>(arr:Array<T>, deep = false):Array<T> => {
     if (!arr) {
         console.log('arr', arr);
 
-        throw new Error('bad frr');
+        throw new Error('Arr in undefined');
     }
 
     const needDeep = deep
@@ -58,7 +49,7 @@ export const getRandElem = <T>(arr:Array<T>):T =>
     arr[getRandInteger(arr.length - 1)];
 
 export const mixElems = <T>(arr:Array<T>):Array<T> => {
-    const arrMixed = getClone(arr);
+    const arrMixed = getArrClone(arr);
     const arrMixedLength = arrMixed.length;
 
     if (!arr.length)
@@ -103,9 +94,8 @@ export const mixElems = <T>(arr:Array<T>):Array<T> => {
     return arrMixed;
 };
 
-// sorts the array ascending
-export const sortArrByNumbers = (arr:Array<number|string>):Array<number|string> => {
-    const sortedArr = getClone(arr);
+export const getArrCloneSortedByNumbers = (arr:Array<number|string>):Array<number|string> => {
+    const sortedArr = getArrClone(arr);
 
     sortedArr.sort(compareNumeric);
 
