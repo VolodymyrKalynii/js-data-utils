@@ -1,4 +1,4 @@
-import {getRandElem} from './array-utils';
+import sample from 'lodash/sample';
 
 const colors = [
     '#000',
@@ -26,7 +26,7 @@ export const generateColors = (colorsQty:number, inputColors:Array<string> = col
     let prevColor = null;
     
     for (let i = 0; i < colorsQty; i++) {
-        const currentColor = getRandElem(inputColors);
+        const currentColor = sample(inputColors);
 
         if (prevColor === currentColor) {
             i--;

@@ -1,18 +1,38 @@
 import {cloneDeep} from 'lodash/cloneDeep'
+import {random} from 'lodash/random'
+import {sample} from 'lodash/sample'
 import {getRandInteger} from './math-utils';
 
+/**
+ * @deprecated
+ * @param arr
+ */
 export const getUniqueElements = <T>(arr:Array<T>):Array<T> => Array.from(new Set(arr));
 
+/**
+ * @deprecated
+ * @param arr
+ * @param arr1
+ */
 export const findUniqueElements = <T>(arr:Array<T>, arr1:Array<T>):Array<T> =>
     arr.filter((obj) =>
         arr1.indexOf(obj) < 0
     );
-
+/**
+ * @deprecated
+ * @param arr
+ * @param arr1
+ */
 export const findSimilarElements = <T>(arr:Array<T>, arr1:Array<T>):Array<T> =>
     arr.filter((obj) =>
         arr1.indexOf(obj) >= 0
     );
 
+/**
+ * @deprecated
+ * @param array1
+ * @param array2
+ */
 export const compareArrays = (array1:Array<any>, array2:Array<any>):boolean => (
     array1.length === array2.length && array1.sort().every((value, index) => value === array2.sort()[index])
 );
@@ -20,10 +40,12 @@ export const compareArrays = (array1:Array<any>, array2:Array<any>):boolean => (
 export const getRandIndex = (data:Array<any>):number => {
     const max = data.length - 1;
 
-    return getRandInteger(max);
+    return random(max);
 };
 
 /**
+ *
+ * @deprecated
  * Returns an array clone.
  * If any of the elements of the array has a complex type - automatically does deep cloning.
  * @param arr
@@ -45,9 +67,17 @@ export const getArrClone = <T>(arr:Array<T>, deep = false):Array<T> => {
     return needDeep ? cloneDeep(arr) : arr.slice();
 };
 
+/**
+ * @deprecated
+ * @param arr
+ */
 export const getRandElem = <T>(arr:Array<T>):T =>
     arr[getRandInteger(arr.length - 1)];
 
+/**
+ * @deprecated
+ * @param arr
+ */
 export const mixElems = <T>(arr:Array<T>):Array<T> => {
     const arrMixed = getArrClone(arr);
     const arrMixedLength = arrMixed.length;
@@ -94,6 +124,10 @@ export const mixElems = <T>(arr:Array<T>):Array<T> => {
     return arrMixed;
 };
 
+/**
+ * @deprecated
+ * @param arr
+ */
 export const getArrCloneSortedByNumbers = (arr:Array<number|string>):Array<number|string> => {
     const sortedArr = getArrClone(arr);
 
@@ -110,6 +144,11 @@ export const makeArrayFromNumber = (number:number):Array<number> => {
     return number.toString().split('').map(item => +item);
 };
 
+/**
+ * Returns an array of element indexes if they are in arr
+ * @param arr
+ * @param elem
+ */
 export const getIndexes = (arr:Array<string|number>, elem:string|number) => {
     const indexes = [];
 

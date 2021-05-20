@@ -12,12 +12,6 @@ export const round10 = (value:number):number =>
 
 export const getRandNumber = ():number => parseInt(Math.random().toString().slice(2));
 
-export const getRandIndexList = (data:any):number => {
-    const max = data.size - 1;
-
-    return getRandInteger(max);
-};
-
 /**
  * Returns a random value of a given bit rate
  */
