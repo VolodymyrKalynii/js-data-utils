@@ -1,11 +1,4 @@
-export const getRandInteger = (max:number):number =>
-    Math.round(Math.random() * max);
-
-export const getRandIntegerWithMin = (min:number, max:number):number => {
-    const rand = min - 0.5 + Math.random() * (max - min + 1);
-
-    return parseInt(Math.round(rand).toString());
-};
+import {random} from 'lodash/random'
 
 export const round10 = (value:number):number =>
     Math.round(value / 10) * 10;
@@ -19,10 +12,10 @@ export const getNthDimensionNumber = (dimension:number) => {
     const minFrame = Math.pow(10, dimension - 1);
     const maxFrame = Math.pow(10, dimension) - 1;
 
-    return getRandIntegerWithMin(minFrame, maxFrame);
+    return random(minFrame, maxFrame);
 };
 
-export const getRandFromFifthPercents = () => getRandIntegerWithMin(0, 1);
+export const getRandFromFifthPercents = () => random(0, 1);
 
 /**
  * returns the result of calculations from the str
