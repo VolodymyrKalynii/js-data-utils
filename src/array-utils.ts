@@ -1,11 +1,12 @@
-import {random} from 'lodash/random'
-import {sample} from 'lodash/sample'
+import {random, sample} from 'lodash';
 
 export const getRandIndex = (data:Array<any>):number => {
     const max = data.length - 1;
 
     return random(max);
 };
+
+console.log(getRandIndex([1, 2]));
 
 export const makeArrayFromNumber = (number:number):Array<number> => {
     if (!number) return [];
