@@ -6,8 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --config jestconfig.json",
-    "test:watch": "jest  --watch --config jestconfig.json"
+    "test": "jest",
+    "test:watch": "jest  --watch"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,13 @@
   "homepage": "https://github.com/VolodymyrKalynii/js-data-utils#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
