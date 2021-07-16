@@ -1,5 +1,9 @@
 import {upFirstLetter} from '../string-utils';
 
 test('upFirstLetter', () => {
-    expect(upFirstLetter('vova')).toBe('Vova');
+    expect(upFirstLetter('test')).toBe('Test');
+});
+
+test('upFirstLetter', () => {
+    expect(upFirstLetter('1')).toBe('1');
 });
