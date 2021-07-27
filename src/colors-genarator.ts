@@ -1,7 +1,8 @@
-import {sample} from 'lodash';
+import {sample, random} from 'lodash';
+// import random from 'lodash/random';
 
 const colors = [
-    '#000',
+    '#000000',
     '#CC0000',
     '#990000',
     '#663300',
@@ -23,20 +24,17 @@ const colors = [
  */
 export const generateColors = (colorsQty:number, inputColors:Array<string> = colors):Array<string> => {
     const resultColors = [];
-    let prevColor = null;
-    
+
     for (let i = 0; i < colorsQty; i++) {
         const currentColor = sample(inputColors);
 
-        if (prevColor === currentColor) {
+        if (resultColors[i - 1] === currentColor) {
             i--;
 
             continue;
         }
 
         resultColors.push(currentColor);
-
-        prevColor = currentColor;
     }
 
     return resultColors;

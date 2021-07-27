@@ -12,5 +12,11 @@ describe('upFirstLetter', () => {
 describe('checkHasStrNoExamplesSymbols', () => {
     test('equal', () => {
         expect(checkHasStrNoExamplesSymbols('t')).toBe(true);
-    }); 
+    });
+
+    const testValue = '1*1•1';
+
+    test(testValue, () => {
+        expect(checkHasStrNoExamplesSymbols(testValue)).toBe(false);
+    });
 });
