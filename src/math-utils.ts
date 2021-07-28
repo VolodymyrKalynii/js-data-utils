@@ -19,18 +19,13 @@ export const getNthDimensionNumber = (dimension:number):number => {
  * tested for actions: ^ * / + - • ()
  */
 export const calculateString = (str:string) => {
-    const sum_or_diff = (sub, a, sign, b) => {
-        return sign == '-' ? a - b : +a + +b;
-    };
-    const mult_or_div = (sub, a, sign, b) => {
-        return sign == '*' || sign == '•' ? a * b : a / b;
-    };
-    const power = (sub, a, b) => {
-        return Math.pow(a, b);
-    };
-    const match_power = /(-?[\d\.]+)\s*\^\s*(-?[\d\.]+)/g;
-    const match_mult_div = /(-?[\d\.]+)\s*([*•:\/])\s*(-?[\d\.]+)/g;
-    const match_sum_diff = /(-?[\d\.]+)\s*([+-])\s*(-?[\d\.]+)/g;
+    const sum_or_diff = (sub, a, sign, b) => sign == '-' ? a - b : +a + +b;
+    const mult_or_div = (sub, a, sign, b) => sign == '*' || sign == '•' ? a * b : a / b;
+    const power = (sub, a, b) => Math.pow(a, b);
+
+    const match_power = /(-?[\d.]+)\s*\^\s*(-?[\d.]+)/g;
+    const match_mult_div = /(-?[\d.]+)\s*([*•:\/])\s*(-?[\d.]+)/g;
+    const match_sum_diff = /(-?[\d.]+)\s*([+-])\s*(-?[\d.]+)/g;
 
     const get_value = (sub, exp) => {
         while (exp.indexOf('^') !== -1)
@@ -44,7 +39,7 @@ export const calculateString = (str:string) => {
     };
 
     while (str.indexOf('(') !== -1) // убираем скобки
-        str = str.replace(/\(([^\(\)]*)\)/g, get_value);
+        str = str.replace(/\(([^()]*)\)/g, get_value);
 
     return +(get_value('', str));
 };
