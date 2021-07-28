@@ -18,12 +18,20 @@ describe('generateColors', () => {
         });
     }
 
-    //todo добавити ще тести
     for (let i = 1; i <= 10; i++) {
         test(`unique colors behind ${i}`, () => {
             expect(generateColors(random(10 + i, 30 + i))
                 .every((item, idx, arr) => item !== arr[idx - 1]))
                 .toBe(true);
+        });
+    }
+
+    for (let i = 1; i <= 10; i++) {
+        test(`one inputColor with length: ${i}`, () => {
+            const expected = generateColors(i, ['red']);
+
+            expect(expected.length).toBe(i);
+            expect(expected.every(item => item === 'red')).toBe(true);
         });
     }
 });
