@@ -34,4 +34,14 @@ describe('generateColors', () => {
             expect(expected.every(item => item === 'red')).toBe(true);
         });
     }
+
+    for (let i = 2; i <= 10; i++) {
+        const colors = ['red', 'blue'];
+
+        test(`one inputColor with length: ${i}`, () => {
+            const expected = generateColors(i, colors);
+
+            expect(expected).toEqual(expect.arrayContaining(colors));
+        });
+    }
 });

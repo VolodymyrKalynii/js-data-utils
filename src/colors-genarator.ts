@@ -22,8 +22,6 @@ export const generateColors = (colorsQty:number, inputColors?:Array<string>):Arr
 
         const uniqueEls = uniq(inputColors);
 
-        console.log(uniqueEls);
-
         if (uniqueEls.length < 2) return getArr(colorsQty, inputColors);
     }
 
