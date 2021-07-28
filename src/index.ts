@@ -3,7 +3,6 @@ export * from './colors-genarator';
 export * from './images-preloader';
 export * from './math-utils';
 export * from './merge-class-names';
-export * from './object-utils';
 export * from './Registry';
 export * from './string-utils';
 export * from './time-function-tester';
