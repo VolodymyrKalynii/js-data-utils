@@ -16,7 +16,7 @@ export const getNthDimensionNumber = (dimension:number):number => {
 /**
  * returns the result of calculations from the str
  * str: 1+1+1| 2-1-2 | 6/3*2| 2•2•2| 2:2•2| ...
- * tested for actions: ^ * / + - •
+ * tested for actions: ^ * / + - • ()
  */
 export const calculateString = (str:string) => {
     const sum_or_diff = (sub, a, sign, b) => {
@@ -50,3 +50,6 @@ export const calculateString = (str:string) => {
 };
 
 console.log(calculateString('7/9'));
+console.log(calculateString('2*4+(4•3)'));
+
+console.log(2 * 4 + (4 * 3));

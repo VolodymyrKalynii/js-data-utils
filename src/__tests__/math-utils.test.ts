@@ -59,4 +59,13 @@ describe('calculateString', () => {
             });
         });
     }
+
+    test('equal with ()', () => {
+        const fistNumber =  random(1, 9);
+        const secondNumber =  random(1, 9);
+        const thirdNumber =  random(1, 9);
+        const result = fistNumber * (secondNumber / thirdNumber);
+
+        expect(calculateString(`${fistNumber}•(${secondNumber}:${thirdNumber})`)).toBe(result);
+    });
 });
