@@ -43,8 +43,3 @@ export const calculateString = (str:string) => {
 
     return +(get_value('', str));
 };
-
-console.log(calculateString('7/9'));
-console.log(calculateString('2*4+(4•3)'));
-
-console.log(2 * 4 + (4 * 3));

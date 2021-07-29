@@ -19,11 +19,10 @@ export const getSecondsStr = (inputSeconds:number):number|string => {
 export const getTimeStr = (inputSeconds:number):string =>
     getMinutes(inputSeconds) + ':' + getSecondsStr(inputSeconds);
 
-//todo написати тести
 export const getTimeStrWithTexts = (inputSeconds:number, texts:Array<string>, noZeroMinutes = false):string => {
     const [min, sec] = texts;
     const inputNumberMinutes = getMinutes(inputSeconds);
-    const inputNumberSeconds:number|string = getSecondsStr(inputSeconds);
+    const seconds = getSecondsStr(inputSeconds);
 
     const minutesText = inputNumberMinutes > 0
         ? `${inputNumberMinutes} ${min} `
@@ -31,13 +30,13 @@ export const getTimeStrWithTexts = (inputSeconds:number, texts:Array<string>, no
             ? ''
             : `${inputNumberMinutes} ${min} `;
 
-    return minutesText + inputNumberSeconds + ' ' + sec;
+    return minutesText + seconds + ' ' + sec;
 };
 
-export const convertTimeToSeconds = (time:{
+export const convertTimeToSeconds = ({minutes, seconds}:{
     minutes:number,
     seconds:number
-}):number => time.minutes * 60 + time.seconds;
+}):number => minutes * 60 + seconds;
 
 export const getNowDateUtc = ():string => {
     const date = new Date();
