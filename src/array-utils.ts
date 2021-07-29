@@ -3,8 +3,19 @@ import {random, sample} from 'lodash';
 export const getRandIndex = (data:Array<any>):number => {
     const max = data.length - 1;
 
+    if (max === -1) return 0;
+
     return random(max);
 };
+
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
+console.log(getRandIndex([]));
 
 export const makeArrayFromNumber = (number:number):Array<number> => {
     if (!number) return [];
