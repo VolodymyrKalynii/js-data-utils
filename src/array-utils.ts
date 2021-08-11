@@ -8,15 +8,6 @@ export const getRandIndex = (data:Array<any>):number => {
     return random(max);
 };
 
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-console.log(getRandIndex([]));
-
 export const makeArrayFromNumber = (number:number):Array<number> => {
     if (!number) return [];
 
