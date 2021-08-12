@@ -11,7 +11,7 @@ export const getRandIndex = (data:Array<any>):number => {
 export const makeArrayFromNumber = (number:number):Array<number> => {
     if (!number) return [];
 
-    return number.toString().split('').map(item => +item);
+    return Math.abs(number).toString().split('').map(item => +item);
 };
 
 /**
@@ -33,9 +33,7 @@ export const getIndexes = (arr:Array<string|number>, elem:string|number) => {
 export const getIndexesQty = (arr:Array<string|number>, elem:string|number) =>
     getIndexes(arr, elem).length;
 
-const compareRandomArr = () => Math.random() - 0.5;
-
-export const getOrderArrForMapping = (n):Array<number> => {
+export const getOrderArrForMapping = (n:number):Array<number> => {
     const arr = [];
 
     for (let i = 0; i < n; i++)
